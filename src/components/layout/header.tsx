@@ -31,10 +31,10 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-4 md:flex">
-          <Link href="#" className="text-sm font-medium hover:underline">
+          <Button variant="ghost" className="text-[#4169E1] font-bold hover:bg-[#4169E1] hover:text-white hover:font-extrabold">
             Login
-          </Link>
-          <Button className="bg-gradient-to-r from-[hsl(222,83%,58%)] to-[hsl(223,76%,49%)] text-white">
+          </Button>
+          <Button className="bg-gradient-to-r from-[hsl(222,83%,58%)] to-[hsl(223,76%,49%)] text-white font-bold hover:font-extrabold">
             Register
           </Button>
         </div>
@@ -57,10 +57,10 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="flex flex-col gap-4 border-t pt-6">
-                  <Link href="#" className="text-center text-sm font-medium">
+                   <Button variant="ghost" className="text-[#4169E1] font-bold hover:bg-[#4169E1] hover:text-white hover:font-extrabold">
                     Login
-                  </Link>
-                  <Button className="w-full bg-gradient-to-r from-[hsl(222,83%,58%)] to-[hsl(223,76%,49%)] text-white">
+                  </Button>
+                  <Button className="w-full bg-gradient-to-r from-[hsl(222,83%,58%)] to-[hsl(223,76%,49%)] text-white font-bold hover:font-extrabold">
                     Register
                   </Button>
                 </div>

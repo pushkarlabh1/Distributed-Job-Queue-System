@@ -20,7 +20,7 @@ const TypingEffect = ({ texts }: { texts: string[] }) => {
       }
 
       if (!isDeleting && displayedText === currentText) {
-        setTimeout(() => setIsDeleting(true), 1500);
+        setTimeout(() => setIsDeleting(true), 4000);
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
@@ -32,7 +32,7 @@ const TypingEffect = ({ texts }: { texts: string[] }) => {
   }, [displayedText, isDeleting, texts, textIndex, typingSpeed]);
 
   return (
-    <p className="mb-4 text-3xl font-semibold text-primary h-16 md:h-10">
+    <p className="mb-4 text-2xl md:text-3xl font-semibold md:font-extrabold text-primary h-16 md:h-10">
       {displayedText}
       <span className="inline-block h-8 w-1 animate-ping bg-primary" />
     </p>

@@ -11,49 +11,77 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full bg-background pt-24 md:pt-32 lg:pt-40">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col justify-center space-y-6">
+    <section className="w-full bg-[#4169E1]/[0.07] min-h-screen flex flex-col items-center justify-start py-1 md:py-5 pt-16 md:pt-24">
+      <div className="container px-12 md:px-24">
+        <div className="grid gap-10 md:grid-cols-1 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
             <h1 className="text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl">
-              Distributed Job Queue System — <span className="text-primary">Manage Tasks at Scale</span>
+              Distributed Job Queue System <br />
+              <span className="text-primary">
+                — Manage Tasks
+                <br className="hidden md:block" /> at Scale.
+              </span>
             </h1>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl">
+            <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0">
               Reliable, scalable, and enterprise-ready job processing for modern applications.
             </p>
-            <div>
+
+            <div className="mx-auto lg:mx-0">
               <TypingEffect texts={typingTexts} />
-              <div className="flex flex-row gap-2 sm:gap-4">
-                <Button
-                  size="lg"
-                  className="flex-1 bg-primary text-xl text-primary-foreground hover:bg-primary/90 hover:font-semibold md:flex-none"
-                >
-                  Recruiter
-                </Button>
-                <Button
-                  size="lg"
-                  className="flex-1 bg-[#16a34a] text-xl text-white hover:bg-[#16a34a]/90 hover:font-semibold md:flex-none"
-                >
-                  Employee
-                </Button>
+
+              {/* Buttons Section */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-8">
+                {/* Recruiter Button with Blue Border Animation */}
+                <div className="animated-border rounded-full">
+                  <div className="inner rounded-full">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full relative z-10 border-0 text-2xl font-extrabold text-[#4169E1] hover:bg-[#4169E1] hover:text-white px-8"
+                    >
+                      Recruiter
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Employee Button with Green Border Animation */}
+                <div className="animated-border green rounded-full">
+                  <div className="inner rounded-full">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full relative z-10 border-0 text-2xl font-bold text-[#16a34a] hover:bg-[#16a34a] hover:text-white px-8"
+                    >
+                      Employee
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+
+            <p className="text-base text-muted-foreground mt-8">
               Already have an account?{' '}
-              <Link href="#" className="font-medium text-primary underline-offset-4 hover:underline">
+              <Link
+                href="#"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
                 Login here
               </Link>
             </p>
           </div>
-          <div className="flex items-center justify-center">
-            <Image
-              src="/img.jpeg"
-              alt="System architecture diagram"
-              width={800}
-              height={600}
-              className="rounded-xl object-cover"
-              data-ai-hint="system diagram"
-            />
+
+          {/* Right Image Section */}
+          <div className="flex items-start justify-center">
+            <div className="rounded-xl bg-white p-4 shadow-lg">
+              <Image
+                src="/img.jpeg"
+                alt="System architecture diagram"
+                width={800}
+                height={600}
+                className="rounded-xl object-cover"
+                data-ai-hint="system diagram"
+              />
+            </div>
           </div>
         </div>
       </div>
