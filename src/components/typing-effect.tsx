@@ -20,7 +20,7 @@ const TypingEffect = ({ texts }: { texts: string[] }) => {
       }
 
       if (!isDeleting && displayedText === currentText) {
-        setTimeout(() => setIsDeleting(true), 4000);
+        setTimeout(() => setIsDeleting(true), 3000);
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false);
         setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
