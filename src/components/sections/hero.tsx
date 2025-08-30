@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import TypingEffect from '@/components/typing-effect';
 
 export default function Hero() {
+  const typingTexts = [
+    'Register now as a < />',
+    'Start your journey as a < />',
+    'Unlock opportunities as a < />',
+  ];
+
   return (
     <section className="w-full bg-background pt-24 md:pt-32 lg:pt-40">
       <div className="container px-4 md:px-6">
@@ -14,13 +21,22 @@ export default function Hero() {
             <p className="max-w-[600px] text-muted-foreground md:text-xl">
               Reliable, scalable, and enterprise-ready job processing for modern applications.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Register as Recruiter
-              </Button>
-              <Button size="lg" className="bg-[#16a34a] text-white hover:bg-[#16a34a]/90">
-                Register as Employee
-              </Button>
+            <div>
+              <TypingEffect texts={typingTexts} />
+              <div className="flex flex-row gap-2 sm:gap-4">
+                <Button
+                  size="sm"
+                  className="flex-1 bg-primary text-xs text-primary-foreground hover:bg-primary/90 hover:font-semibold md:flex-none md:text-sm"
+                >
+                  Recruiter
+                </Button>
+                <Button
+                  size="sm"
+                  className="flex-1 bg-[#16a34a] text-xs text-white hover:bg-[#16a34a]/90 hover:font-semibold md:flex-none md:text-sm"
+                >
+                  Employee
+                </Button>
+              </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Already have an account?{' '}
