@@ -25,14 +25,14 @@ export default function Hero() {
               <TypingEffect texts={typingTexts} />
               <div className="flex flex-row gap-2 sm:gap-4">
                 <Button
-                  size="sm"
-                  className="flex-1 bg-primary text-xs text-primary-foreground hover:bg-primary/90 hover:font-semibold md:flex-none md:text-sm"
+                  size="lg"
+                  className="flex-1 bg-primary text-xl text-primary-foreground hover:bg-primary/90 hover:font-semibold md:flex-none"
                 >
                   Recruiter
                 </Button>
                 <Button
-                  size="sm"
-                  className="flex-1 bg-[#16a34a] text-xs text-white hover:bg-[#16a34a]/90 hover:font-semibold md:flex-none md:text-sm"
+                  size="lg"
+                  className="flex-1 bg-[#16a34a] text-xl text-white hover:bg-[#16a34a]/90 hover:font-semibold md:flex-none"
                 >
                   Employee
                 </Button>
