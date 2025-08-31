@@ -13,7 +13,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full bg-[#4169E1]/[0.07] flex flex-col items-center justify-center pt-20 md:pt-24 lg:pt-28 pb-20 md:pb-24 lg:pb-28">
+    <section className="w-full bg-[#4169E1]/[0.07] flex flex-col items-center justify-center pt-8 md:pt-24 lg:pt-28 pb-20 md:pb-24 lg:pb-28">
       <div className="container px-4 md:px-6 lg:px-28">
         <div className="grid gap-10 md:grid-cols-1 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
@@ -61,7 +61,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="text-base text-muted-foreground mt-8">
+            <p className="text-lg text-muted-foreground mt-8">
               Already have an account?{' '}
               <Link
                 href="#"
