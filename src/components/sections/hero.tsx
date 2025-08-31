@@ -21,7 +21,7 @@ export default function Hero() {
               Distributed Job Queue System <br />
               <span className="text-primary">
                 — Manage Tasks
-                <br className="hidden md:block" /> at Scale.
+                <br /> at Scale.
               </span>
             </h1>
             <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0">
