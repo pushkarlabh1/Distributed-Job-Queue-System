@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -11,8 +13,8 @@ export default function Hero() {
   ];
 
   return (
-    <section className="w-full bg-[#4169E1]/[0.07] min-h-screen flex flex-col items-center justify-start py-1 md:py-5 pt-16 md:pt-24">
-      <div className="container px-12 md:px-24">
+    <section className="w-full bg-[#4169E1]/[0.07] flex flex-col items-center justify-center pt-20 md:pt-24 lg:pt-28 pb-20 md:pb-24 lg:pb-28">
+      <div className="container px-4 md:px-6 lg:px-28">
         <div className="grid gap-10 md:grid-cols-1 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
             <h1 className="text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl">
@@ -30,7 +32,7 @@ export default function Hero() {
               <TypingEffect texts={typingTexts} />
 
               {/* Buttons Section */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-4 sm:mt-8">
                 {/* Recruiter Button with Blue Border Animation */}
                 <div className="animated-border rounded-full">
                   <div className="inner rounded-full">
@@ -72,15 +74,17 @@ export default function Hero() {
 
           {/* Right Image Section */}
           <div className="flex items-start justify-center">
-            <div className="rounded-xl bg-white p-4 shadow-lg">
-              <Image
-                src="/img.jpeg"
-                alt="System architecture diagram"
-                width={800}
-                height={600}
-                className="rounded-xl object-cover"
-                data-ai-hint="system diagram"
-              />
+            <div className="animated-border animated-border-image">
+              <div className="rounded-xl bg-white p-4 shadow-lg inner">
+                <Image
+                  src="/img.jpeg"
+                  alt="System architecture diagram"
+                  width={800}
+                  height={600}
+                  className="rounded-xl object-cover"
+                  data-ai-hint="system diagram"
+                />
+              </div>
             </div>
           </div>
         </div>

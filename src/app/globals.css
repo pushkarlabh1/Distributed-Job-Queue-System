@@ -51,6 +51,23 @@
     padding: 4px; /* thickness of animated border */
     overflow: hidden;
   }
+  
+  .animated-border-image {
+    border-radius: 0.75rem; /* rounded-xl */
+  }
+  
+  .animated-border-image::before {
+    background: conic-gradient(
+      from 0deg,
+      #3c67f2,
+      rgba(60, 103, 242, 0.3),
+      #3c67f2
+    ) !important;
+  }
+
+  .animated-border-image::after {
+    border: 3px solid rgba(60, 103, 242, 0.3) !important; /* constant faint border for image */
+  }
 
   /* Rotating animation */
   .animated-border::before {

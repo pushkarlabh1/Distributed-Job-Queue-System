@@ -11,7 +11,7 @@ export default function RoleSelection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Choose Your Role
           </h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl">
+          <p className="max-w-[700px] text-[#4169E1] md:text-xl font-bold">
             Select the role that best fits your needs
           </p>
         </div>

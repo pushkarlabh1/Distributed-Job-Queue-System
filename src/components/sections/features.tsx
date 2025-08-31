@@ -33,7 +33,7 @@ export default function Features() {
       <div className="container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Powerful Features</h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl">
+          <p className="max-w-[700px] text-[#4169E1] font-bold md:text-xl">
             Everything you need for efficient job queue management.
           </p>
         </div>

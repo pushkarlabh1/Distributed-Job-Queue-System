@@ -32,9 +32,9 @@ const TypingEffect = ({ texts }: { texts: string[] }) => {
   }, [displayedText, isDeleting, texts, textIndex, typingSpeed]);
 
   return (
-    <p className="mb-4 text-2xl md:text-3xl font-semibold md:font-extrabold text-primary h-16 md:h-10">
+    <p className="mb-4 text-xl md:text-3xl font-extrabold text-primary min-h-[32px] md:min-h-[40px]">
       {displayedText}
-      <span className="inline-block h-8 w-1 animate-ping bg-primary" />
+      <span className="inline-block h-6 w-1 animate-ping bg-primary" />
     </p>
   );
 };
