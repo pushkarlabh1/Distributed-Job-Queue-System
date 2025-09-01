@@ -219,11 +219,11 @@ function SignupFormComponent() {
           Get started on JobQueueX as an
         </p>
 
-        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-white p-1">
+        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-gray-100 p-1">
           <button
             onClick={() => handleRoleChange('enterprise')}
             className={cn(
-              'rounded-md py-2 text-sm font-medium transition-colors',
+              'flex-1 rounded-md py-2 text-sm font-medium transition-colors',
               role === 'enterprise'
                 ? 'bg-[#2563EB] text-white shadow'
                 : 'text-gray-600 hover:bg-gray-200'
@@ -234,7 +234,7 @@ function SignupFormComponent() {
           <button
             onClick={() => handleRoleChange('employee')}
             className={cn(
-              'rounded-md py-2 text-sm font-medium transition-colors',
+              'flex-1 rounded-md py-2 text-sm font-medium transition-colors',
               role === 'employee'
                 ? 'bg-[#16A34A] text-white shadow'
                 : 'text-gray-600 hover:bg-gray-200'
@@ -260,7 +260,7 @@ function SignupFormComponent() {
                             variant="outline"
                             role="combobox"
                             className={cn(
-                              'w-full justify-between font-normal rounded-lg',
+                              'w-full justify-between font-normal',
                               !field.value && 'text-muted-foreground'
                             )}
                           >
@@ -273,8 +273,8 @@ function SignupFormComponent() {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0 rounded-none">
-                        <Command className="rounded-none">
+                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
+                        <Command>
                           <CommandInput placeholder="Search company..." />
                           <CommandList>
                             <CommandEmpty>

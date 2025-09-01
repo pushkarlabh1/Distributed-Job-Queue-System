@@ -78,11 +78,11 @@ export default function LoginForm() {
           Welcome back! Please enter your details.
         </p>
 
-        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-white p-1">
+        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-gray-100 p-1">
           <button
             onClick={() => handleRoleChange('enterprise')}
             className={cn(
-              'rounded-md py-2 text-sm font-medium transition-colors',
+              'flex-1 rounded-md py-2 text-sm font-medium transition-colors',
               role === 'enterprise'
                 ? 'bg-[#2563EB] text-white shadow'
                 : 'text-gray-600 hover:bg-gray-200'
@@ -93,7 +93,7 @@ export default function LoginForm() {
           <button
             onClick={() => handleRoleChange('employee')}
             className={cn(
-              'rounded-md py-2 text-sm font-medium transition-colors',
+              'flex-1 rounded-md py-2 text-sm font-medium transition-colors',
               role === 'employee'
                 ? 'bg-[#16A34A] text-white shadow'
                 : 'text-gray-600 hover:bg-gray-200'

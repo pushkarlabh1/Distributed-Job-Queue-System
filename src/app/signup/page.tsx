@@ -9,7 +9,7 @@ export default function SignupPage() {
       <Header />
       <main className="flex-1 flex items-center justify-center pt-16">
         <div className="w-full max-w-6xl p-4 md:py-20">
-          <div className="shadow-lg rounded-[2rem] overflow-hidden lg:grid lg:grid-cols-2">
+          <div className="shadow-lg overflow-hidden lg:grid lg:grid-cols-2 rounded-xl">
             <div className="lg:col-span-1">
               <SignupMarketing />
             </div>
