@@ -79,13 +79,13 @@ export default function Hero() {
           {/* Right Image Section */}
           <div className="flex items-start justify-center">
             <div className="animated-border animated-border-image">
-              <div className="rounded-xl bg-white p-4 shadow-lg inner">
+              <div className="bg-white p-4 shadow-lg inner">
                 <Image
                   src="/img.jpeg"
                   alt="System architecture diagram"
                   width={800}
                   height={600}
-                  className="rounded-xl object-cover"
+                  className=""
                   data-ai-hint="system diagram"
                 />
               </div>

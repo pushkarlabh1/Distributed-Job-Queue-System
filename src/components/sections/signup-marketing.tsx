@@ -4,13 +4,13 @@ export default function SignupMarketing() {
   return (
     <div className="hidden lg:flex flex-col justify-start bg-[#E0E7FF] p-12 h-full pt-24">
       <div className="flex justify-center mb-8">
-        <div className="rounded-xl bg-white p-2 shadow-lg">
+        <div className="bg-white p-2 shadow-lg">
           <Image
             src="/img.png"
             alt="JobQueueX Illustration"
             width={300}
             height={300}
-            className="rounded-lg object-cover"
+            className="object-cover"
             data-ai-hint="abstract technology illustration"
           />
         </div>

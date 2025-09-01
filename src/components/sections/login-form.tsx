@@ -70,7 +70,7 @@ export default function LoginForm() {
 
   return (
     <div className="mx-auto w-full max-w-lg bg-white p-6 md:p-8">
-      <div className="bg-white">
+      <div className="bg-transparent">
         <h1 className="text-center text-2xl font-bold text-[#111827]">
           Login to Your Account
         </h1>
@@ -78,7 +78,7 @@ export default function LoginForm() {
           Welcome back! Please enter your details.
         </p>
 
-        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-[#F9FAFB] p-1">
+        <div className="my-4 grid grid-cols-2 gap-2 rounded-lg bg-white p-1">
           <button
             onClick={() => handleRoleChange('enterprise')}
             className={cn(
