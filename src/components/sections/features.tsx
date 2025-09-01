@@ -29,7 +29,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="w-full bg-[#4169E1]/[0.07] pt-8 pb-16 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32">
+    <section id="features" className="w-full bg-background pt-8 pb-16 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32">
       <div className="container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Powerful Features</h2>

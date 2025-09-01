@@ -34,37 +34,41 @@ export default function Hero() {
               {/* Buttons Section */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-4 sm:mt-8">
                 {/* Recruiter Button with Blue Border Animation */}
-                <div className="animated-border rounded-full">
-                  <div className="inner rounded-full">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full relative z-10 border-0 text-2xl font-extrabold text-[#4169E1] hover:bg-[#4169E1] hover:text-white px-8"
-                    >
-                      Recruiter
-                    </Button>
+                <Link href="/signup?role=enterprise">
+                  <div className="animated-border rounded-full">
+                    <div className="inner rounded-full">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full relative z-10 border-0 text-2xl font-extrabold text-[#4169E1] hover:bg-[#4169E1] hover:text-white px-8 rounded-full"
+                      >
+                        Enterprise
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Employee Button with Green Border Animation */}
-                <div className="animated-border green rounded-full">
-                  <div className="inner rounded-full">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full relative z-10 border-0 text-2xl font-bold text-[#16a34a] hover:bg-[#16a34a] hover:text-white px-8"
-                    >
-                      Employee
-                    </Button>
+                <Link href="/signup?role=employee">
+                  <div className="animated-border green rounded-full">
+                    <div className="inner rounded-full">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full relative z-10 border-0 text-2xl font-bold text-[#16a34a] hover:bg-[#16a34a] hover:text-white px-8 rounded-full"
+                      >
+                        Employee
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
 
             <p className="text-lg text-muted-foreground mt-8">
               Already have an account?{' '}
               <Link
-                href="#"
+                href="/login"
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
                 Login here

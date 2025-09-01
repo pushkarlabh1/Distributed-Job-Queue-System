@@ -4,7 +4,7 @@ import { Logo } from '@/components/logo';
 
 export default function Footer() {
   return (
-    <footer className="bg-muted text-muted-foreground">
+    <footer className="bg-[#4169E1]/[0.07] text-muted-foreground">
       <div className="container px-4 md:px-6 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
@@ -14,12 +14,6 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <nav className="flex flex-row gap-4 sm:gap-6">
-              <Link href="#" className="text-sm hover:text-foreground transition-colors">Home</Link>
-              <Link href="#dashboard" className="text-sm hover:text-foreground transition-colors">Dashboard</Link>
-              <Link href="#docs" className="text-sm hover:text-foreground transition-colors">Docs</Link>
-              <Link href="#" className="text-sm hover:text-foreground transition-colors">Contact</Link>
-            </nav>
           </div>
           <div className="flex justify-center md:justify-end">
             <div className="flex gap-4">
