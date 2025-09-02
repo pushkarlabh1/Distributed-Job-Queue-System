@@ -69,7 +69,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg bg-white p-6 md:p-8">
+    <div className="mx-auto w-full max-w-lg bg-[#FAFAFA] p-6 md:p-8">
       <div className="bg-transparent">
         <h1 className="text-center text-2xl font-bold text-[#111827]">
           Login to Your Account
