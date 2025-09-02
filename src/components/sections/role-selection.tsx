@@ -18,7 +18,7 @@ export default function RoleSelection() {
 
         <div className="mx-auto grid max-w-5xl items-stretch gap-8 sm:grid-cols-2">
           {/* Recruiter Card */}
-          <Card className="flex flex-col rounded-[30px] transition-shadow duration-300 hover:shadow-lg bg-[#4169E1]/[0.07]">
+          <Card className="flex flex-col rounded-[30px] transition-shadow duration-300 hover:shadow-lg">
             <CardHeader className="items-center">
               <div className="mb-4 rounded-full bg-primary/10 p-4">
                 <Building2 className="h-8 w-8 text-primary" />
@@ -41,7 +41,7 @@ export default function RoleSelection() {
           </Card>
 
           {/* Employee Card */}
-          <Card className="flex flex-col rounded-[30px] transition-shadow duration-300 hover:shadow-lg bg-[#4169E1]/[0.07]">
+          <Card className="flex flex-col rounded-[30px] transition-shadow duration-300 hover:shadow-lg">
             <CardHeader className="items-center">
               <div className="mb-4 rounded-full bg-[#16a34a]/10 p-4">
                 <Laptop className="h-8 w-8 text-[#16a34a]" />
