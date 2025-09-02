@@ -5,7 +5,7 @@ import SignupMarketing from '@/components/sections/signup-marketing';
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-[#4169E1]/[0.07] md:bg-[#FAFAFA]">
+    <div className="flex min-h-dvh flex-col bg-[#4169E1]/[0.07] md:bg-[#FAFAFA]git rebase -i HEAD~3">
       <Header />
       <main className="flex flex-1 items-center justify-center pt-16">
         <div className="w-full max-w-6xl p-4 md:py-20">
