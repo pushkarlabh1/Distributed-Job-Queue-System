@@ -194,7 +194,7 @@ function SignupFormComponent() {
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-white p-6 md:p-8">
+    <div className="w-full max-w-lg mx-auto bg-[#FAFAFA] p-6 md:p-8">
       <div className="mb-4 flex items-center gap-4">
         <div className="flex items-center gap-2">
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#2563EB] text-sm font-bold text-white">
