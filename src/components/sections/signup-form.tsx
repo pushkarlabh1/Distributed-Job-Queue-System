@@ -260,7 +260,7 @@ function SignupFormComponent() {
                             variant="outline"
                             role="combobox"
                             className={cn(
-                              'w-full justify-between font-normal',
+                              'w-full justify-between font-normal rounded-md',
                               !field.value && 'text-muted-foreground'
                             )}
                           >
@@ -273,8 +273,8 @@ function SignupFormComponent() {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
-                        <Command>
+                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0 !rounded-none">
+                        <Command className="!rounded-none">
                           <CommandInput placeholder="Search company..." />
                           <CommandList>
                             <CommandEmpty>
@@ -297,6 +297,7 @@ function SignupFormComponent() {
                                 <CommandItem
                                   value={company.label}
                                   key={company.value}
+                                   
                                   onSelect={() => {
                                     form.setValue('company', company.value);
                                     setOpenCompanyPopover(false);
