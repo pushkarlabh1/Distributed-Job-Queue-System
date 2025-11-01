@@ -19,10 +19,12 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import { auth } from '@/firebase/firebase';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -102,6 +104,7 @@ const employeeSchema = z.object({
 
 function SignupFormComponent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const initialRole = searchParams.get('role');
 
   const [role, setRole] = useState<Role>(
@@ -142,23 +145,43 @@ function SignupFormComponent() {
     }
   }, [searchParams]);
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     setIsLoading(true);
-    console.log(values);
-    // Simulate API call
-    setTimeout(() => {
-      if (role === 'enterprise') {
-        setInviteLink('https://jobqueuex.com/invite/aB3xZ9pQ');
-        setFormStep('success');
-      } else {
-        toast({
-          title: 'Welcome to your new team!',
-          description: "You've successfully joined the company workspace.",
-        });
-        reset();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      const user = userCredential.user;
+
+      await sendEmailVerification(user);
+
+      localStorage.setItem('role', role);
+      localStorage.setItem('firstName', values.firstName);
+      localStorage.setItem('lastName', values.lastName);
+
+      toast({
+        title: 'Account Created!',
+        description: 'Please check your email to verify your account.',
+      });
+
+      router.push('/verify-email');
+      
+    } catch (error: any) {
+      const errorCode = error.code;
+      let errorMessage = error.message;
+
+      if (errorCode === 'auth/email-already-in-use') {
+        errorMessage = 'This email address is already in use.';
+      } else if (errorCode === 'auth/weak-password') {
+        errorMessage = 'The password is too weak.';
       }
+
+      toast({
+        title: 'Signup Failed',
+        description: errorMessage,
+        variant: 'destructive',
+      });
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
   
   const handleRoleChange = (newRole: Role) => {
@@ -172,7 +195,7 @@ function SignupFormComponent() {
     toast({ title: 'Invite link copied to clipboard!' });
   };
   
-  if (formStep === 'success') {
+  if (formStep === 'success' && role === 'enterprise') {
     return (
       <div className="flex flex-col items-center justify-center bg-white p-8 text-center h-full">
         <CheckCircle2 className="h-16 w-16 text-green-500 mb-4" />
@@ -186,7 +209,7 @@ function SignupFormComponent() {
             <Copy className="h-4 w-4" />
           </Button>
         </div>
-        <Button onClick={() => setFormStep('form')} className="mt-8 w-full bg-[#2563EB] hover:bg-[#1D4ED8]">
+        <Button onClick={() => router.push('/dashboard')} className="mt-8 w-full bg-[#2563EB] hover:bg-[#1D4ED8]">
           Go to Dashboard
         </Button>
       </div>
@@ -273,8 +296,8 @@ function SignupFormComponent() {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0 !rounded-none">
-                        <Command className="!rounded-none">
+                      <PopoverContent className="w-[--radix-popover-trigger-width] p-0 rounded-md">
+                        <Command>
                           <CommandInput placeholder="Search company..." />
                           <CommandList>
                             <CommandEmpty>
@@ -297,7 +320,6 @@ function SignupFormComponent() {
                                 <CommandItem
                                   value={company.label}
                                   key={company.value}
-                                   
                                   onSelect={() => {
                                     form.setValue('company', company.value);
                                     setOpenCompanyPopover(false);
@@ -535,3 +557,5 @@ export default function SignupForm() {
     </React.Suspense>
   );
 }
+
+    

@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import SignupForm from '@/components/sections/signup-form';
@@ -23,3 +25,4 @@ export default function SignupPage() {
     </div>
   );
 }
+
