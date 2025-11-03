@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   THEME VARIABLES (Light + Dark)
+   =============================== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --radius: 9999px;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===============================
+   ANIMATED BORDER (Rotating Gradient)
+   =============================== */
+@layer utilities {
+  .animated-border {
+    position: relative;
+    display: inline-block;
+    border-radius: 9999px; /* ensures oval shape */
+    padding: 4px; /* thickness of animated border */
+    overflow: hidden;
+  }
+  
+  .animated-border-image {
+    border-radius: 0.75rem; /* rounded-xl */
+  }
+  
+  .animated-border-image::before {
+    background: conic-gradient(
+      from 0deg,
+      #3c67f2,
+      rgba(60, 103, 242, 0.3),
+      #3c67f2
+    ) !important;
+  }
+
+  .animated-border-image::after {
+    border: 3px solid rgba(60, 103, 242, 0.3) !important; /* constant faint border for image */
+  }
+
+  /* Rotating animation */
+  .animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from 0deg,
+      rgba(65, 105, 225, 1),
+      rgba(65, 105, 225, 0.3),
+      rgba(65, 105, 225, 1)
+    );
+    animation: spin 3s linear infinite;
+    z-index: 1;
+  }
+
+  /* Constant faint border (blue for Recruiter) */
+  .animated-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 3px solid rgba(65, 105, 225, 0.3); /* 30% opacity */
+    z-index: 0;
+  }
+
+  .animated-border .inner {
+    position: relative;
+    border-radius: inherit;
+    background: white; /* background inside the button */
+    z-index: 2;
+  }
+
+  /* Green version for Employee button */
+  .animated-border.green::before {
+    background: conic-gradient(
+      from 0deg,
+      #119c44,
+      rgba(17, 156, 68, 0.3),
+      #119c44
+    );
+  }
+
+  .animated-border.green::after {
+    border: 3px solid rgba(17, 156, 68, 0.3); /* constant faint green border */
+  }
+
+  /* Hover Effects */
+  .animated-border:hover::before,
+  .animated-border:hover::after {
+    display: none;
+  }
+
+  .animated-border:hover {
+    background: #4169E1;
+  }
+
+  .animated-border:hover .inner {
+    background: transparent;
+  }
+
+  .animated-border:hover .inner button {
+    color: white;
+  }
+  
+  .animated-border.green:hover {
+    background: #16a34a;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
